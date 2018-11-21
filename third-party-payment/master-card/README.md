@@ -8,7 +8,7 @@ Legacy Payment Service
 
 Master card has a legacy Payment Service implemented by two-way authorization in a pair redirect request.
 
-![payment-master-card](https://raw.githubusercontent.com/yidas/web-service-architectures/master/third-party-payment/master-card/payment-master-card.io.png)
+![payment-master-card](https://raw.githubusercontent.com/yidas/web-service-architectures/master/third-party-payment/master-card/payment_master-card.io.png)
 
 1. The token is a hash value which contains specified order information referred to GET parameters from application to Master Card payment's landing page.
 The payment endpoint will verify the token depended on giving merchant account ID information.
