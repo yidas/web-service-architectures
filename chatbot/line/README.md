@@ -4,6 +4,8 @@ Line BOT
 API Flow
 --------
 
+### Message Reply
+
 <img src="https://raw.githubusercontent.com/yidas/web-service-architectures/master/chatbot/line/api-flow.png" />
 
 - Above example is a simple implementation for Line webhook quick reply, which sends reply requests during webhook request.
