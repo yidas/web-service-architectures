@@ -1,6 +1,22 @@
 Third Party Payment
 ===================
 
+Categories
+----------
+
+- [Master Card](master-card)
+- [PayPal](paypal)
+
+---
+
+Theories
+--------
+
+- [Credit Card Process Flow](#credit-card-process-flow)
+- [Apply Pay Flow](#apply-pay-flow)
+
+---
+
 Credit Card Process Flow
 ------------------------
 
@@ -15,7 +31,7 @@ Credit Card Process Flow
 ---
 
 Apply Pay Flow
-------------------------
+--------------
 
 ![Apply Pay Flow](https://raw.githubusercontent.com/yidas/web-service-architectures/master/third-party-payment/flow_apple_pay.png)
 
@@ -32,8 +48,11 @@ Apply Pay Flow
 (Merchant -> Consumer)
 7. Service delivery / product delivery  
 (Merchant -> Consumer)
-8. Sales deposit (Consumer -> Acquirer)
-9. Sales deposit (Acquirer -> GMO-PG)
-10. Sales deposit (GMO-PG -> Merchant)
+8. Sales deposit  
+(Consumer -> Acquirer)
+9. Sales deposit  
+(Acquirer -> GMO-PG)
+10. Sales deposit  
+(GMO-PG -> Merchant)
 
 > Reference: [Apple Pay | GMO Payment Gateway](https://www.gmo-pg.com/en/service/mulpay/apple-pay/)
