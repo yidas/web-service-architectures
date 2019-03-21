@@ -4,6 +4,8 @@ Third Party Payment
 Categories
 ----------
 
+Take a look to see the API flow of third-party payments:
+
 - [Master Card](master-card)
 - [PayPal](paypal)
 
@@ -11,6 +13,8 @@ Categories
 
 Theories
 --------
+
+This page provides theries of online payment:
 
 - [Credit Card Process Flow](#credit-card-process-flow)
 - [Apply Pay Flow](#apply-pay-flow)
