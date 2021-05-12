@@ -75,6 +75,9 @@ CyberSource payment services provide the objects and methods you need for making
 6. CyberSource returns the response to the merchant.
 7. The issuing bank approves the transfer of money to the acquiring bank.
 8. The acquiring bank credits the merchant's account.
+
 This diagram shows how real-time electronic card processing works:
 
 ![cybs](https://developer.cybersource.com/content/dam/cybsdeveloper2019/dita/dita-payments/cybs_how.jpg/_jcr_content/renditions/original)
+
+> Reference: [CyberSource’s Payment Process](https://developer.cybersource.com/api/soap-developer-guides/dita-payments/GettingStarted/HowDoesItWork.html)
