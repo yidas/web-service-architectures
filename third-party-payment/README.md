@@ -60,3 +60,10 @@ Apply Pay Flow
 (GMO-PG -> Merchant)
 
 > Reference: [Apple Pay | GMO Payment Gateway](https://www.gmo-pg.com/en/service/mulpay/apple-pay/)
+
+---
+
+CyberSource (CYBS)
+------------------
+
+![cybs](https://developer.cybersource.com/content/dam/cybsdeveloper2019/dita/dita-payments/cybs_how.jpg/_jcr_content/renditions/original)
