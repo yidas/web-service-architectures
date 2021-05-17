@@ -1,0 +1,33 @@
+@startuml
+
+participant "Order System" as order
+participant "Gateway" as gw
+participant "Payment Service" as acquire #White
+
+
+order -> gw: Refund / Capture
+activate order
+activate gw
+gw -> acquire: Refund / Capture
+acquire -->x gw: Result
+gw --> order: Transaction failed\n(API timeout)
+deactivate gw
+order -> order: Flag transaction
+deactivate order
+
+group Retry
+    order -> gw: Inquiry
+    activate order
+    activate gw
+    gw -> acquire: Inquiry
+    acquire --> gw: Result
+    gw --> order: Result
+    deactivate gw
+    order -> order: Update status
+    deactivate order
+end
+
+@enduml
+
+@startuml
+
