@@ -1,0 +1,25 @@
+@startuml
+
+actor "User" as user #White
+participant "Order System" as order
+participant "Gateway" as gw
+participant "Payment Service" as acquire #White
+
+user -> order: Payment confirm
+activate order
+order -> gw: Payment confirm
+activate gw
+gw -> acquire: Payment coinfirm
+acquire -->x gw: Result
+gw -> gw: Flag transaction
+gw --> order: Transaction failed\n(Payment timeout)
+deactivate gw
+order --> user: Transaction failed
+deactivate order
+
+group Batch - reconcile
+    gw -> acquire: Failure cancel
+    acquire --> gw: Success
+end
+
+@enduml
