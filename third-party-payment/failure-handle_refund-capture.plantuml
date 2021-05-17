@@ -23,11 +23,13 @@ group Retry
     acquire --> gw: Result
     gw --> order: Result
     deactivate gw
-    order -> order: Update status
-    deactivate order
+    
+    alt Record found
+        order -> order: Update status
+    else Else
+        order -> gw: Refund / Capture
+        deactivate order
+    end
 end
 
 @enduml
-
-@startuml
-
