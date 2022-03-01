@@ -1,0 +1,22 @@
+@startuml
+actor "User" as user
+participant "Merchant System" as mid
+participant "Payment Gateway" as pg
+participant "Acquirer System" as acquirer
+participant "Issuer ACS \n(Access Control Server)" as issuer
+
+user -> mid: Order with payment method
+mid -> pg: Payment request
+pg --> mid: 3DS payment: 3DS redirectUrl
+mid --> user: Redirect to 3DS redirectUrl
+user -> issuer: Verify 
+issuer -> pg: 3DS verification result
+pg -> acquirer: Authoirze payment
+acquirer --> pg: Result
+pg --> user: Result
+user -> mid: Redirect to merchant's Url
+mid -> pg: Query payment result (Check)
+pg --> mid: Result
+mid --> user: Result
+
+@enduml
