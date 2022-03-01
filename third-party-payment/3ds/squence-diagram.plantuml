@@ -1,4 +1,5 @@
 @startuml
+
 actor "User" as user
 participant "Merchant System" as mid
 participant "Payment Gateway" as pg
