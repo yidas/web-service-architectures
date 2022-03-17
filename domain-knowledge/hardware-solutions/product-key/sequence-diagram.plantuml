@@ -1,0 +1,24 @@
+@startuml
+
+actor "Customer" as user
+participant "Device Hardware" as hw
+participant "OS App" as app
+participant "Server" as server
+actor "Service Provider" as provider
+
+hw <-> server: Same secret key for each devices and server
+
+provider -> server: Generate Product Key
+provider -> user: Provide Product Key
+
+user -> app: Key in Product Key
+app -> hw: Get info
+hw --> app: HW info with own Device No.
+app -> server: Product Key & Device No.
+server -> server: Redeem Product Key \nEncrypt content with Device No. by secret key
+server --> app: Encrypted content
+app -> hw: Encrypted content
+hw -> hw: Decrypt and validate with Device No.\nActivate device
+hw --> app: Device activated successfully
+
+@enduml
