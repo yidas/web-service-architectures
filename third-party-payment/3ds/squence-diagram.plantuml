@@ -12,7 +12,7 @@ pg --> mid: 3DS payment: 3DS redirectUrl
 mid --> user: Redirect to 3DS redirectUrl
 user -> issuer: Verify 
 issuer -> pg: 3DS verification result
-pg -> acquirer: Authoirze payment
+pg -> acquirer: Authorize payment
 acquirer --> pg: Result
 pg --> user: Result
 user -> mid: Redirect to merchant's Url
