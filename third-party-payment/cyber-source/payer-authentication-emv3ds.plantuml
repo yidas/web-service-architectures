@@ -1,0 +1,29 @@
+@startuml
+participant "Card ACS" as c
+Actor "User" as u
+participant "Merchant" as m
+participant "Cyber Source" as cs
+
+u -> m : Request 3DS transaction
+m -> cs : Payer Authentication Setup
+cs --> m : Response `accessToken`, `deviceDataCollectionURL`, `referenceID`
+m -> u : Request 3ds Certification
+u -> c : Device collection iframe \n`deviceDataCollectionURL`, `accessToken`
+c -> u : Response callback payload
+u -> m : Enroll
+m -> cs : Check Enrollment \n`referenceID`, `returnUrl`
+alt Reason code: 100
+cs --> m: Response with reason code \n`TransactionID`
+else Reason code: 475
+cs --> m: Response with reason code \n`stepUpUrl`, `accessToken`, `TransactionID`
+m -> u: Request challenge
+u -> c: step-up challenge iframe \n`stepUpUrl`, `accessToken`,
+c -> u: POST to returnUrl \n`TransactionId`
+u -> m: Validate \n`TransactionId`
+m -> cs: Payer Authentication Validation \n`TransactionId`
+cs --> m: Response with result
+end
+m -> cs: Call `Sale` or `Auth`
+cs -> m: Response
+
+@enduml
