@@ -78,6 +78,6 @@ CyberSource payment services provide the objects and methods you need for making
 
 This diagram shows how real-time electronic card processing works:
 
-![cybs](https://developer.cybersource.com/content/dam/cybsdeveloper2019/dita/dita-payments/cybs_how.jpg/_jcr_content/renditions/original)
+![cybs](https://developer.cybersource.com/content/dam/new-documentation/transitional/en/dita-payouts/PayoutsTransactionFlow.jpg/_jcr_content/renditions/cq5dam.web.1280.1280.jpeg)
 
-> Reference: [CyberSource’s Payment Process](https://developer.cybersource.com/api/soap-developer-guides/dita-payments/GettingStarted/HowDoesItWork.html)
+> Reference: [CyberSource’s Payment Process](https://developer.cybersource.com/docs/cybs/en-us/payouts/developer/all/rest/payouts/HowItWorks.html)

@@ -11,7 +11,7 @@ m -> u : Request 3ds Certification
 u -> c : Device collection iframe \n`deviceDataCollectionURL`, `accessToken`
 c -> u : Response callback payload
 u -> m : Enroll
-m -> cs : Check Enrollment \n`referenceID`, `returnUrl`
+m -> cs : Check Enrollment \n`referenceID`, `returnUrl`, payer INFO
 alt Reason code: 100
 cs --> m: Response with reason code \n`TransactionID`
 else Reason code: 475
