@@ -24,11 +24,11 @@ This page provides theries of online payment:
 Credit Card Process Flow
 ------------------------
 
-![Credit Card Process Flow 01](https://raw.githubusercontent.com/yidas/web-service-architectures/master/third-party-payment/transaction_flow_01.png)
+![Credit Card Process Flow 01](https://raw.githubusercontent.com/yidas/web-service-architectures/master/payment/transaction_flow_01.png)
 
-![Credit Card Process Flow 02](https://raw.githubusercontent.com/yidas/web-service-architectures/master/third-party-payment/transaction_flow_02.png)
+![Credit Card Process Flow 02](https://raw.githubusercontent.com/yidas/web-service-architectures/master/payment/transaction_flow_02.png)
 
-![Credit Card Process Flow 03](https://raw.githubusercontent.com/yidas/web-service-architectures/master/third-party-payment/transaction_flow_03.png)
+![Credit Card Process Flow 03](https://raw.githubusercontent.com/yidas/web-service-architectures/master/payment/transaction_flow_03.png)
 
 > Reference: [WalletHub](https://wallethub.com/edu/credit-card-transaction/25511/)
 
@@ -37,7 +37,7 @@ Credit Card Process Flow
 Apply Pay Flow
 --------------
 
-![Apply Pay Flow](https://raw.githubusercontent.com/yidas/web-service-architectures/master/third-party-payment/flow_apple_pay.png)
+![Apply Pay Flow](https://raw.githubusercontent.com/yidas/web-service-architectures/master/payment/flow_apple_pay.png)
 
 1. Encrypted payment information is sent
 2. Payment processing based on the encrypted payment information  
