@@ -31,7 +31,7 @@ PayPal Checkout Integration
 Express Checkout (End to 2017)
 ------------------------------
 
-<img src="https://raw.githubusercontent.com/yidas/web-service-architectures/master/third-party-payment/paypal/overview-ec-ecapiflow.gif" />
+<img src="https://raw.githubusercontent.com/yidas/web-service-architectures/master/payment/paypal/overview-ec-ecapiflow.gif" />
 
 This old payment checkouot API has a big mistake that the PayPal page's total amount showed to customer is not same as final total amount dealed by merchant. This happens on step 6 which merchant sends a final transaction detail request with actual amount to PayPal API server for charging.
 
