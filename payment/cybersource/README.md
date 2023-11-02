@@ -1,6 +1,8 @@
 Cybersource
 ===========
 
+[CyberSource](https://en.wikipedia.org/wiki/CyberSource) is a United Kingdom based payment gateway founded in 1994 and is acquired by Visa Inc. 
+
 This diagram shows how real-time electronic card processing works:
 
 ![cybs](https://developer.cybersource.com/content/dam/new-documentation/transitional/en/dita-payouts/PayoutsTransactionFlow.jpg/_jcr_content/renditions/cq5dam.web.1280.1280.jpeg)
