@@ -60,24 +60,3 @@ Apply Pay Flow
 (GMO-PG -> Merchant)
 
 > Reference: [Apple Pay | GMO Payment Gateway](https://www.gmo-pg.com/en/service/mulpay/apple-pay/)
-
----
-
-CyberSource (CYBS)
-------------------
-
-CyberSource payment services provide the objects and methods you need for making calls to carry out a payment transaction. The following sequence outlines a payment transaction:
-1. A consumer places an order.
-2. Using a payment API, the merchant securely transfers the order information to CyberSource.
-3. CyberSource formats the transaction detail and, through its payment gateway, routes the transaction authorization request to the processor.
-4. The processor routes the transaction to the consumer’s payment card-issuing bank to request transaction authorization.
-5. The issuing bank (issuing the payment card for Discover or American Express transactions) authorizes or declines the transaction.
-6. CyberSource returns the response to the merchant.
-7. The issuing bank approves the transfer of money to the acquiring bank.
-8. The acquiring bank credits the merchant's account.
-
-This diagram shows how real-time electronic card processing works:
-
-![cybs](https://developer.cybersource.com/content/dam/new-documentation/transitional/en/dita-payouts/PayoutsTransactionFlow.jpg/_jcr_content/renditions/cq5dam.web.1280.1280.jpeg)
-
-> Reference: [CyberSource’s Payment Process](https://developer.cybersource.com/docs/cybs/en-us/payouts/developer/all/rest/payouts/HowItWorks.html)
