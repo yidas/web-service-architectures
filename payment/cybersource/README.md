@@ -1,4 +1,4 @@
-Cybersource
+CyberSource
 ===========
 
 [CyberSource](https://en.wikipedia.org/wiki/CyberSource) is a United Kingdom based payment gateway founded in 1994 and is acquired by Visa Inc. 
