@@ -1,6 +1,9 @@
 Cybersource
 ===========
 
+This diagram shows how real-time electronic card processing works:
+
+![cybs](https://developer.cybersource.com/content/dam/new-documentation/transitional/en/dita-payouts/PayoutsTransactionFlow.jpg/_jcr_content/renditions/cq5dam.web.1280.1280.jpeg)
 
 1. Collect debit card information and initiate payments. To manage PCI scope, you can use CyberSource Secure Acceptance and the Token Management Service.
 2. Initiate the CyberSource Payouts API to disburse funds to the recipient.
@@ -12,8 +15,6 @@ Cybersource
 9. The payment network delivers settlement and reconciliation data for reporting.
 9. CyberSource transaction detail and summary-level reporting is available to you as well as the acquirer.
 10. Funds are transferred from your business bank account to the acquirer for daily settlement.
-
-![cybs](https://developer.cybersource.com/content/dam/new-documentation/transitional/en/dita-payouts/PayoutsTransactionFlow.jpg/_jcr_content/renditions/cq5dam.web.1280.1280.jpeg)
 
 > Reference: [CyberSource’s Payment Process](https://developer.cybersource.com/docs/cybs/en-us/payouts/developer/all/rest/payouts/HowItWorks.html)
 
