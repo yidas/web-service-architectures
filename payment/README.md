@@ -1,17 +1,18 @@
-Third Party Payment
-===================
+Payment
+=======
 
-Categories
-----------
+- Domain
+  - [3DS (3-Domain Secure)](3ds)
 
-Take a look to see the API flow of third-party payments:
-
-- [Master Card](master-card)
-- [PayPal](paypal)
+- Payment Gateway
+  - [CyberSource](cybersource)
+ 
+- PSP (Payment service providers ) - 第三方支付
+  - [PayPal](paypal)
 
 ---
 
-Theories
+Outline
 --------
 
 This page provides theries of online payment:
