@@ -15,8 +15,10 @@ Payment
 Outline
 --------
 
-- [Credit Card Process Flow](#credit-card-process-flow)
-- [Apply Pay Flow](#apply-pay-flow)
+- [Credit Card Payment Systems](#credit-card-payment-systems)
+  - [Process Flow](#process-flow)
+  - [Card Scheme Working Principle](#card-scheme-working-principle)
+  - [Apply Pay Flow](#apply-pay-flow)
 
 ---
 
@@ -40,7 +42,7 @@ Credit Card Payment Systems
 
 ![How does card scheme make money](https://github.com/ByteByteGoHq/system-design-101/raw/main/images/how%20does%20visa%20makes%20money.jpg)
 
-> Reference: [ByteByteGoHq/system-design-101 - Github]([https://wallethub.com/edu/credit-card-transaction/25511/](https://github.com/ByteByteGoHq/system-design-101#why-is-the-credit-card-called-the-most-profitable-product-in-banks-how-does-visamastercard-make-money))
+> Reference: [ByteByteGoHq/system-design-101 - Github](https://github.com/ByteByteGoHq/system-design-101#why-is-the-credit-card-called-the-most-profitable-product-in-banks-how-does-visamastercard-make-money)
 
 ### Apply Pay Flow
 
