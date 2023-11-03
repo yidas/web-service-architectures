@@ -15,15 +15,15 @@ Payment
 Outline
 --------
 
-This page provides theries of online payment:
-
 - [Credit Card Process Flow](#credit-card-process-flow)
 - [Apply Pay Flow](#apply-pay-flow)
 
 ---
 
-Credit Card Process Flow
-------------------------
+Credit Card Payment Systems
+---------------------------
+
+### Process Flow
 
 ![Credit Card Process Flow 01](https://raw.githubusercontent.com/yidas/web-service-architectures/master/payment/transaction_flow_01.png)
 
@@ -33,10 +33,16 @@ Credit Card Process Flow
 
 > Reference: [WalletHub](https://wallethub.com/edu/credit-card-transaction/25511/)
 
----
 
-Apply Pay Flow
---------------
+### Card Scheme Working Principle
+
+![How does VISA Work](https://github.com/ByteByteGoHq/system-design-101/raw/main/images/visa_payment.jpeg)
+
+![How does card scheme make money](https://github.com/ByteByteGoHq/system-design-101/raw/main/images/how%20does%20visa%20makes%20money.jpg)
+
+> Reference: [ByteByteGoHq/system-design-101 - Github]([https://wallethub.com/edu/credit-card-transaction/25511/](https://github.com/ByteByteGoHq/system-design-101#why-is-the-credit-card-called-the-most-profitable-product-in-banks-how-does-visamastercard-make-money))
+
+### Apply Pay Flow
 
 ![Apply Pay Flow](https://raw.githubusercontent.com/yidas/web-service-architectures/master/payment/flow_apple_pay.png)
 
