@@ -1,0 +1,91 @@
+@startuml
+
+actor "Card Holder" as user
+agent "Merchants" as merchant
+package "Payment Gateway Provider" {
+  agent "Payment Gateway" as pg
+  agent "Processor" as processor
+}
+package "Payment Gateway Provider" {
+  agent "Payment Gateway" as pg
+  agent "Processor" as processor
+}
+package "Local Payment Gateway Provider" {
+  agent "Payment Gateway" as pg_local
+  agent "Processor" as processor_local
+}
+package "Local Acquirer Provider" {
+  agent "POS terminal" as reader
+  agent "Processor" as processor_acq
+}
+package "Credit Card Network" as ccnet {
+  agent "VISA" as visa
+  agent "MasterCard" as mc
+  agent "JCB" as jcb
+}
+package "Local Credit Card Network" as ccnet_local {
+  agent "NCCC" as nccc
+  agent "FISC" as fisc
+}
+package "Global Issuing Bank" as issuer_global {
+  agent "Global \nIssuer A" as issuer_global_a
+}
+package "Local Issuing Bank" as issuer_local {
+  agent "Issuer A" as issuer_a
+  agent "Issuer B" as issuer_b
+  agent "Issuer C" as issuer_c
+}
+package "Local Acquiring Bank" as acquirer_local {
+  agent "Acquirer A" as acquirer_a
+  agent "Acquirer B" as acquirer_b
+  agent "Acquirer C" as acquirer_c
+}
+
+user -> merchant
+
+merchant -down-> pg
+pg .-> merchant
+pg -right-> processor
+processor .-left-> pg
+processor --> ccnet
+ccnet .-> processor
+processor -up-> acquirer_a: capture batch
+
+merchant -down-> pg_local
+pg_local .-> merchant
+pg_local -right-> processor_local
+processor_local .-left-> pg_local
+processor_local --> ccnet_local
+ccnet_local .-> processor_local
+processor_local -up-> acquirer_b: capture batch
+
+merchant -down-> reader
+reader .-> merchant
+reader -right-> processor_acq
+processor_acq .-left-> reader
+processor_acq --> ccnet_local
+ccnet_local .-> processor_acq
+processor_acq -up-> acquirer_c: capture batch
+
+ccnet <-right-> ccnet_local: Routing
+
+visa --> issuer_a
+issuer_a .-> visa
+mc --> issuer_a
+issuer_a .-> mc
+nccc --> issuer_a
+issuer_a .-> nccc
+nccc --> issuer_b
+issuer_b .-> nccc
+fisc --> issuer_c: Issuing approvals
+issuer_c .-> fisc
+
+visa --> issuer_global_a
+issuer_global_a .-> visa
+mc --> issuer_global_a
+issuer_global_a .-> mc
+
+merchant .-> user
+
+
+@enduml
