@@ -3,7 +3,7 @@ skinparam linetype polyline
 skinparam linetype ortho
 left to right direction
 
-actor "Card Holder" as user
+actor "Card Holders" as user
 agent "Merchants \n(Bank accounts)" as merchant
 package "Card Network / Card Scheme / Clearing" as ccnet {
   agent "VISA" as visa
