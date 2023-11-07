@@ -34,7 +34,7 @@ nccc --[#brown] mc
 nccc --[#brown] jcb
 fisc --[#darkGoldenRod] visa
 fisc --[#darkGoldenRod] mc
-fisc --[#darkGoldenRod] jcb
+fisc -[#darkGoldenRod] jcb
 
 issuer_a --[#brown]> nccc: Clearing for Issuing
 acquirer_a <--[#brown] nccc: Clearing for Acquiring
@@ -43,8 +43,8 @@ acquirer_b <--[#darkGoldenRod] fisc
 issuer_c --[#brown]> nccc
 acquirer_c <--[#darkGoldenRod] fisc
 
-issuer_global_a -left-> visa
-issuer_global_a -left-> mc: Clearing for Issuing
+issuer_global_a -right-> visa
+issuer_global_a -right-> mc: Clearing for Issuing
 
 acquirer_local ---> merchant: Settlement
 
