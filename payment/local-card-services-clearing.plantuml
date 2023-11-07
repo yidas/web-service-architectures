@@ -37,16 +37,16 @@ fisc --[#darkGoldenRod] mc
 fisc -[#darkGoldenRod] jcb
 
 issuer_a --[#brown]> nccc: Clearing for Issuing
-acquirer_a <--[#brown] nccc: Clearing for Acquiring
+acquirer_a <--[#brown] nccc
 issuer_b --[#darkGoldenRod]> fisc
-acquirer_b <--[#darkGoldenRod] fisc
+acquirer_b <--[#darkGoldenRod] fisc: Clearing for Acquiring\n(Interchange fee deducted)
 issuer_c --[#brown]> nccc
 acquirer_c <--[#darkGoldenRod] fisc
 
 issuer_global_a -right-> visa
 issuer_global_a -right-> mc: Clearing for Issuing
 
-acquirer_local ---> merchant: Settlement
+acquirer_local ---> merchant: Settlement\n(MDR deducted)
 
 user --> issuer_global: Card billing
 user -> issuer_local
