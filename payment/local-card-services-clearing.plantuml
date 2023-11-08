@@ -9,6 +9,7 @@ package "Card Network / Card Scheme / Clearing" as ccnet {
   agent "VISA" as visa
   agent "MasterCard" as mc
   agent "JCB" as jcb
+  agent "American Express" as axp
 }
 package "Regional Card Network / Clearing" as ccnet_local {
   agent "NCCC" as nccc #lightcoral
@@ -32,6 +33,7 @@ nccc - fisc: Clearing Routing
 nccc --[#brown] visa: Clearing Routing
 nccc --[#brown] mc
 nccc --[#brown] jcb
+nccc --[#brown] axp
 fisc --[#darkGoldenRod] visa
 fisc --[#darkGoldenRod] mc
 fisc -[#darkGoldenRod] jcb
@@ -44,7 +46,8 @@ issuer_c --[#brown]> nccc
 acquirer_c <--[#darkGoldenRod] fisc
 
 issuer_global_a -right-> visa
-issuer_global_a -right-> mc: Clearing for Issuing
+issuer_global_a -right-> mc
+issuer_global_a -right-> axp: Clearing for Issuing
 
 acquirer_local ---> merchant: Settlement\n(MDR deducted)
 
