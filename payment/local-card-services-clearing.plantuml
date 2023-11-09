@@ -24,7 +24,7 @@ package "Regional Issuing Bank" as issuer_local {
   agent "Bank B" as issuer_c
 }
 package "Regional Acquiring Bank" as acquirer_local {
-  agent "Bank A" as acquirer_a
+  agent " Bank A " as acquirer_a
   agent "Bank C" as acquirer_b
   agent "Bank B" as acquirer_c
 }
@@ -38,19 +38,24 @@ fisc --[#darkGoldenRod] visa
 fisc --[#darkGoldenRod] mc
 fisc -[#darkGoldenRod] jcb
 
-issuer_a --[#brown]> nccc: Clearing for Issuing
+issuer_a --[#brown]> nccc: Off-us Clearing
 acquirer_a <--[#brown] nccc
 issuer_b --[#darkGoldenRod]> fisc
-acquirer_b <--[#darkGoldenRod] fisc: Clearing for Acquiring\n(Interchange fee deducted)
+acquirer_b <--[#darkGoldenRod] fisc: Clearing for Acquiring\n(IRF deducted)
 issuer_c --[#brown]> nccc
 acquirer_c <--[#darkGoldenRod] fisc
 
+issuer_a -> acquirer_a
+issuer_b -> acquirer_b
+issuer_c -> acquirer_c: On-us Clearing
+
 issuer_global_a -right-> visa
 issuer_global_a -right-> mc
-issuer_global_a -right-> axp: Clearing for Issuing
+issuer_global_a -right-> axp: Off-us Clearing
 
 acquirer_local ---> merchant: Settlement\n(MDR deducted)
 
-user --> issuer_global: Card billing
-user -> issuer_local
+user -down-> issuer_global: Card billing
+user -down-> issuer_global: Foreign transaction fee 
+user -up-> issuer_local
 @enduml
