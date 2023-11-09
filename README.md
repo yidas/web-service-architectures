@@ -15,5 +15,5 @@ OUTLINE
 - [Message Queue](message-queue)  
   Message Queue
   
-- [Third Party Payment](third-party-payment)  
-  Payment Gateway integration
+- [Payment System](payment)  
+  Credit Card Payment Systems
