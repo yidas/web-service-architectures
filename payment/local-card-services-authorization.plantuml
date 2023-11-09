@@ -3,6 +3,8 @@ skinparam linetype polyline
 skinparam linetype ortho
 left to right direction
 
+title "Regional Card Network (Taiwan) - Authorization"
+
 actor "Card Holders" as user
 agent "Merchants" as merchant
 package "Card Network / Card Scheme / Clearing" as ccnet {
