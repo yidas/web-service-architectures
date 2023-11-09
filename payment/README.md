@@ -49,11 +49,11 @@ Credit Card Payment Systems
 
 #### Authorization
 
-![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/yidas/web-service-architectures/master/payment/local-card-services-authorization.plantuml)
+![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/yidas/web-service-architectures/master/payment/local-card-services-authorization.plantuml?v=20231109)
 
 #### Clearing & Settlement
 
-![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/yidas/web-service-architectures/master/payment/local-card-services-clearing.plantuml)
+![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/yidas/web-service-architectures/master/payment/local-card-services-clearing.plantuml?v=20231109)
 
 ### Apply Pay Flow
 
