@@ -1,4 +1,4 @@
-Line BOT
+LINE BOT
 ========
 
 API Flow
@@ -14,7 +14,10 @@ API Flow
 
 ---
 
-Web View Auth
+Web View Auth application scenario
 -------------
 
+If you would like to implement authentication in LINE Webview without using [LIFF](https://developers.line.biz/en/docs/liff/overview/):
+
 <img src="https://raw.githubusercontent.com/yidas/web-service-architectures/master/chatbot/line/chatbot-line-webview.png" />
+
