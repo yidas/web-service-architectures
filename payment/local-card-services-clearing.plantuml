@@ -29,7 +29,7 @@ package "Regional Acquiring Bank" as acquirer_local {
   agent "Bank B" as acquirer_c
 }
 
-nccc - fisc: Clearing Routing
+nccc - fisc
 nccc --[#brown] visa: Clearing Routing
 nccc --[#brown] mc
 nccc --[#brown] jcb
