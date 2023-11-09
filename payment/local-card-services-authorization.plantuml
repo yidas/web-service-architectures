@@ -1,91 +1,57 @@
 @startuml
+skinparam linetype polyline
+skinparam linetype ortho
+left to right direction
 
-actor "Card Holder" as user
+actor "Card Holders" as user
 agent "Merchants" as merchant
-package "Payment Gateway Provider" {
-  agent "Payment Gateway" as pg
-  agent "Processor" as processor
-}
-package "Payment Gateway Provider" {
-  agent "Payment Gateway" as pg
-  agent "Processor" as processor
-}
-package "Local Payment Gateway Provider" {
-  agent "Payment Gateway" as pg_local
-  agent "Processor" as processor_local
-}
-package "Local Acquirer Provider" {
-  agent "POS terminal" as reader
-  agent "Processor" as processor_acq
-}
-package "Credit Card Network" as ccnet {
+package "Card Network / Card Scheme / Clearing" as ccnet {
   agent "VISA" as visa
   agent "MasterCard" as mc
   agent "JCB" as jcb
+  agent "American Express" as axp
 }
-package "Local Credit Card Network" as ccnet_local {
-  agent "NCCC" as nccc
-  agent "FISC" as fisc
+package "Regional Card Network / Clearing" as ccnet_local {
+  agent "NCCC" as nccc #lightcoral
+  agent "FISC" as fisc #orange
 }
 package "Global Issuing Bank" as issuer_global {
-  agent "Global \nIssuer A" as issuer_global_a
+  agent "Bank G" as issuer_global_a
 }
-package "Local Issuing Bank" as issuer_local {
-  agent "Issuer A" as issuer_a
-  agent "Issuer B" as issuer_b
-  agent "Issuer C" as issuer_c
+package "Regional Issuing Bank" as issuer_local {
+  agent "Bank A" as issuer_a
+  agent "Bank C" as issuer_b
+  agent "Bank B" as issuer_c
 }
-package "Local Acquiring Bank" as acquirer_local {
-  agent "Acquirer A" as acquirer_a
-  agent "Acquirer B" as acquirer_b
-  agent "Acquirer C" as acquirer_c
+package "Regional Acquiring Bank" as acquirer_local {
+  agent "Bank A" as acquirer_a
+  agent "Bank C" as acquirer_b
+  agent "Bank B" as acquirer_c
 }
 
-user -> merchant
 
-merchant -down-> pg
-pg .-> merchant
-pg -right-> processor
-processor .-left-> pg
-processor --> ccnet
-ccnet .-> processor
-processor -up-> acquirer_a: capture batch
+merchant -up--> acquirer_local: Authorize via POS\n or Payment Gateway
 
-merchant -down-> pg_local
-pg_local .-> merchant
-pg_local -right-> processor_local
-processor_local .-left-> pg_local
-processor_local --> ccnet_local
-ccnet_local .-> processor_local
-processor_local -up-> acquirer_b: capture batch
+nccc - fisc
+nccc --[#brown] visa: Authorization Routing
+nccc --[#brown] mc
+nccc --[#brown] jcb
+nccc --[#brown] axp
+fisc --[#darkGoldenRod] visa
+fisc --[#darkGoldenRod] mc
+fisc -[#darkGoldenRod] jcb
 
-merchant -down-> reader
-reader .-> merchant
-reader -right-> processor_acq
-processor_acq .-left-> reader
-processor_acq --> ccnet_local
-ccnet_local .-> processor_acq
-processor_acq -up-> acquirer_c: capture batch
+issuer_a <--[#brown] nccc: Authorization Approval
+acquirer_a --[#brown]> nccc
+issuer_b <--[#darkGoldenRod] fisc
+acquirer_b --[#darkGoldenRod]> fisc: Authorize
+issuer_c <--[#brown] nccc
+acquirer_c --[#darkGoldenRod]> fisc
 
-ccnet <-right-> ccnet_local: Routing
-
-visa --> issuer_a
-issuer_a .-> visa
-mc --> issuer_a
-issuer_a .-> mc
-nccc --> issuer_a
-issuer_a .-> nccc
-nccc --> issuer_b
-issuer_b .-> nccc
-fisc --> issuer_c: Issuing approvals
-issuer_c .-> fisc
-
-visa --> issuer_global_a
-issuer_global_a .-> visa
-mc --> issuer_global_a
-issuer_global_a .-> mc
-
-merchant .-> user
+issuer_global_a <-right- visa
+issuer_global_a <-right- mc
+issuer_global_a <-right- axp: Authorization Approval
 
 
+user -right-> merchant: Pay by credit card 　
 @enduml
