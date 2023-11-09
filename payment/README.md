@@ -48,7 +48,9 @@ Credit Card Payment Systems
 
 #### Authorization
 
-#### Cleaering
+![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/yidas/web-service-architectures/master/payment/local-card-services-authorization.plantuml)
+
+#### Clearing & Settlement
 
 ![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/yidas/web-service-architectures/master/payment/local-card-services-clearing.plantuml)
 
