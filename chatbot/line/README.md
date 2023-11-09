@@ -21,3 +21,5 @@ If you would like to implement authentication in LINE Webview without using [LIF
 
 <img src="https://raw.githubusercontent.com/yidas/web-service-architectures/master/chatbot/line/chatbot-line-webview.png" />
 
+> Event hook from LINE should bring the user channelId for authentication bundling.
+
