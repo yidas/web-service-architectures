@@ -45,6 +45,7 @@ fisc -[#darkGoldenRod] jcb
 
 issuer_a <--[#brown] nccc: Authorization Approval
 acquirer_a --[#brown]> nccc
+acquirer_b -> issuer_b: On-us \nbypass
 issuer_b <--[#darkGoldenRod] fisc
 acquirer_b --[#darkGoldenRod]> fisc: Authorize
 issuer_c <--[#brown] nccc
