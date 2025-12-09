@@ -8,52 +8,60 @@ title "Regional Card Network (Taiwan) - Authorization"
 actor "Card Holders" as user
 agent "Merchants" as merchant
 package "Card Network / Card Scheme / Clearing" as ccnet {
-  agent "VISA" as visa
-  agent "MasterCard" as mc
+  agent "Visa" as visa
+  agent "Mastercard" as mc
   agent "JCB" as jcb
   agent "American Express" as axp
 }
-package "Regional Card Network / Clearing" as ccnet_local {
-  agent "NCCC" as nccc #lightcoral
-  agent "FISC" as fisc #orange
+package "Regional Authorization Switch / Clearing Center" as ccnet_local {
+  agent "NCCC \n(V/M/J/Amex)" as nccc #lightcoral
+  agent "FISC \n(V/M/J)" as fisc #orange
 }
 package "Global Issuing Bank" as issuer_global {
-  agent "Bank G" as issuer_global_a
+  agent "Bank G \n(via V/M/Amex)" as issuer_global_a
 }
 package "Regional Issuing Bank" as issuer_local {
-  agent "Bank A" as issuer_a
-  agent "Bank C" as issuer_b
-  agent "Bank B" as issuer_c
+  agent "Bank B \n(via FISC)" as issuer_b
+  agent "Bank C \n(via NCCC)" as issuer_c
+  agent "Bank D \n(via VisaNet/NCCC)" as issuer_d
 }
 package "Regional Acquiring Bank" as acquirer_local {
-  agent "Bank A" as acquirer_a
-  agent "Bank C" as acquirer_b
-  agent "Bank B" as acquirer_c
+  agent "Bank A \n(via VisaNet/NCCC)" as acquirer_a
+  agent "Bank B \n(via FISC)" as acquirer_b
+}
+package "PSP / Gateway / Aggregator" as aggregator_group {
+  agent "<color:white>Cybersource \n<color:white>(V/M/J/Amex)" as aggregator_cybs #midnightBlue
+  ' agent "<color:white>Checkout.com" as aggregator_cko #blue
 }
 
 
-merchant -up--> acquirer_local: Authorize via POS\n or Payment Gateway
+merchant -up--> acquirer_local: Authorize via Acquirer System directly
+merchant -up--> aggregator_group: Authorize via PSP / Gateway / Aggregator
 
 nccc - fisc
-nccc --[#brown] visa: Authorization Routing
-nccc --[#brown] mc
-nccc --[#brown] jcb
-nccc --[#brown] axp
-fisc --[#darkGoldenRod] visa
+
+nccc --[#brown] ccnet: Authorization Routing
+fisc --[#darkGoldenRod] visa: Authorization Routing
 fisc --[#darkGoldenRod] mc
 fisc -[#darkGoldenRod] jcb
 
-issuer_a <--[#brown] nccc: Authorization Approval
-acquirer_a --[#brown]> nccc
-acquirer_b -> issuer_b: On-us \nbypass
-issuer_b <--[#darkGoldenRod] fisc
-acquirer_b --[#darkGoldenRod]> fisc: Authorize
+acquirer_a -[#brown]> nccc
+acquirer_a -> visa
+acquirer_b -[#darkGoldenRod]> fisc
+
+issuer_b <--[#darkGoldenRod] fisc: Authorization Approval
 issuer_c <--[#brown] nccc
-acquirer_c --[#darkGoldenRod]> fisc
+issuer_d <--[#brown] nccc
+issuer_d <-- visa
+
+acquirer_b -> issuer_b: On-us \nbypass
+
+aggregator_cybs . acquirer_a #midnightBlue
+aggregator_cybs -> ccnet #midnightBlue
 
 issuer_global_a <-right- visa
 issuer_global_a <-right- mc
-issuer_global_a <-right- axp: Authorization Approval
+issuer_global_a <-right- axp
 
 
 user -right-> merchant: Pay by credit card 　
