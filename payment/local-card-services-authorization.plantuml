@@ -5,7 +5,7 @@ left to right direction
 
 title "Regional Card Network (Taiwan) - Authorization"
 
-actor "Card Holders" as user
+actor "Card Holders \n(Issuer B,C,D,G)" as user
 agent "Merchants" as merchant
 package "Card Network / Card Scheme / Clearing" as ccnet {
   agent "Visa" as visa
@@ -35,28 +35,28 @@ package "PSP / Gateway / Aggregator" as aggregator_group {
 }
 
 
-merchant -up--> acquirer_local: Authorize via Acquirer System directly
-merchant -up--> aggregator_group: Authorize via PSP / Gateway / Aggregator
+merchant -up-> acquirer_local: Authorize via \nAcquirer System directly\n 
+merchant -up--> aggregator_group: Authorize via \nPSP / Gateway / Aggregator
 
 nccc - fisc
 
-nccc --[#brown] ccnet: Authorization Routing
-fisc --[#darkGoldenRod] visa: Authorization Routing
-fisc --[#darkGoldenRod] mc
-fisc -[#darkGoldenRod] jcb
+nccc <--[#brown]> ccnet: Authorization Routing
+fisc <--[#darkGoldenRod]> visa: Authorization Routing
+fisc <--[#darkGoldenRod]> mc
+fisc <-[#darkGoldenRod]> jcb
 
 acquirer_a -[#brown]> nccc
 acquirer_a -> visa
 acquirer_b -[#darkGoldenRod]> fisc
 
-issuer_b <--[#darkGoldenRod] fisc: Authorization Approval
+issuer_b <--[#darkGoldenRod] fisc: Authorization\nApproval
 issuer_c <--[#brown] nccc
 issuer_d <--[#brown] nccc
 issuer_d <-- visa
 
 acquirer_b -> issuer_b: On-us \nbypass
 
-aggregator_cybs . acquirer_a #midnightBlue
+aggregator_cybs .. acquirer_a #midnightBlue: Acquiring\nProcessor
 aggregator_cybs -> ccnet #midnightBlue
 
 issuer_global_a <-right- visa
