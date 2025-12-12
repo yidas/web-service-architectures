@@ -49,11 +49,11 @@ Credit Card Payment Systems
 
 #### Authorization
 
-![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/yidas/web-service-architectures/master/payment/local-card-services-authorization.plantuml?v=20231225)
+![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/yidas/web-service-architectures/master/payment/local-card-services-authorization.plantuml?v=20251212)
 
 #### Clearing & Settlement
 
-![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/yidas/web-service-architectures/master/payment/local-card-services-clearing.plantuml?v=20231109)
+![](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/yidas/web-service-architectures/master/payment/local-card-services-clearing.plantuml?v=20251212)
 
 ### Apply Pay Flow
 
@@ -80,5 +80,6 @@ Credit Card Payment Systems
 (GMO-PG -> Merchant)
 
 > Reference: [Apple Pay | GMO Payment Gateway](https://www.gmo-pg.com/en/service/mulpay/apple-pay/)
+
 
 
