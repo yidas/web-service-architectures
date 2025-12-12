@@ -39,9 +39,9 @@ Credit Card Payment Systems
 
 ### Card Scheme Working Principle
 
-![How does card scheme make money]([https://github.com/ByteByteGoHq/system-design-101/raw/main/images/how%20does%20visa%20makes%20money.jpg](https://assets.bytebytego.com/diagrams/0041-how-does-visa-make-money.png))
+![How does card scheme make money](https://assets.bytebytego.com/diagrams/0041-how-does-visa-make-money.png)
 
-![How does VISA Work]([https://github.com/ByteByteGoHq/system-design-101/raw/main/images/visa_payment.jpeg](https://assets.bytebytego.com/diagrams/0403-visa-payment.jpg))
+![How does VISA Work](https://assets.bytebytego.com/diagrams/0403-visa-payment.jpg)
 
 > Reference: [ByteByteGoHq/system-design-101 - Github](https://github.com/ByteByteGoHq/system-design-101)
 
@@ -80,4 +80,5 @@ Credit Card Payment Systems
 (GMO-PG -> Merchant)
 
 > Reference: [Apple Pay | GMO Payment Gateway](https://www.gmo-pg.com/en/service/mulpay/apple-pay/)
+
 
